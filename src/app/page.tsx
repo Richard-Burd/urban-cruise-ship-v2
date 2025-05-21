@@ -16,7 +16,7 @@ export default function HomePage() {
         </li>
         <li>
           Enable footnotes and customize the footnotes heading to say
-          "References"
+          &quot;References&quot;
         </li>
         <li>
           Inject React components (like <code>HelloFromReact</code>) directly
