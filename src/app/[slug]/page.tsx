@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeRenameFootnotes from "@/lib/rehypeRenameFootnotes";
+import HelloFromReact from "@/components/HelloFromReact";
 
 // official type signature for App Router
 export const dynamicParams = true;
@@ -21,6 +22,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <article className="prose mx-auto p-6">
       <MDXRemote
         source={fileContent}
+        components={{
+          HelloFromReact,
+        }}
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm],
