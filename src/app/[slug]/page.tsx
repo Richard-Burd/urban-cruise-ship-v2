@@ -3,8 +3,9 @@ import fs from "fs/promises";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
+import rehypeRenameFootnotes from "@/lib/rehypeRenameFootnotes";
 
-// ✅ Use the official type signature for App Router
+// official type signature for App Router
 export const dynamicParams = true;
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -23,7 +24,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm],
-            rehypePlugins: [rehypeSlug],
+            rehypePlugins: [rehypeSlug, rehypeRenameFootnotes],
           },
         }}
       />
